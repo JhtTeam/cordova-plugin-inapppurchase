@@ -32,6 +32,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import com.smartidea.moneyreco.R;
 
 public class InAppBillingV3 extends CordovaPlugin {
 
@@ -217,13 +218,13 @@ public class InAppBillingV3 extends CordovaPlugin {
         if (result.isFailure()) {
           int response = result.getResponse();
           if (response == IabHelper.IABHELPER_BAD_RESPONSE || response == IabHelper.IABHELPER_UNKNOWN_ERROR) {
-            callbackContext.error(makeError("Could not complete purchase", BAD_RESPONSE_FROM_SERVER, result));
+            callbackContext.error(makeError(cordovaActivity.getString(R.string.inapp_unknow_error), BAD_RESPONSE_FROM_SERVER, result));
           } else if (response == IabHelper.IABHELPER_VERIFICATION_FAILED) {
-            callbackContext.error(makeError("Could not complete purchase", BAD_RESPONSE_FROM_SERVER, result));
+            callbackContext.error(makeError(cordovaActivity.getString(R.string.inapp_unknow_error), BAD_RESPONSE_FROM_SERVER, result));
           } else if (response == IabHelper.IABHELPER_USER_CANCELLED) {
-            callbackContext.error(makeError("Purchase Cancelled", USER_CANCELLED, result));
+            callbackContext.error(makeError(cordovaActivity.getString(R.string.inapp_purchase_cancel), USER_CANCELLED, result));
           } else if (response == IabHelper.BILLING_RESPONSE_RESULT_ITEM_ALREADY_OWNED) {
-            callbackContext.error(makeError("Item already owned", ITEM_ALREADY_OWNED, result));
+            callbackContext.error(makeError(cordovaActivity.getString(R.string.inapp_item_already_owner), ITEM_ALREADY_OWNED, result));
           } else {
             callbackContext.error(makeError("Error completing purchase: " + response, UNKNOWN_ERROR, result));
           }
