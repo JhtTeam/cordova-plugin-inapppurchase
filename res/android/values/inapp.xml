@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="inapp_item_already_owner">Item already owned</string>
-    <string name="inapp_purchase_cancel">Purchase Cancelled</string>
-    <string name="inapp_unknow_error">Could not complete purchase</string>
-    <string name="inapp_verify_error">Could not complete purchase</string>
+    <string name="inapp_item_already_owner">Item trying to purchase have been already owned</string>
+    <string name="inapp_purchase_cancel">Purchase has been cancelled</string>
+    <string name="inapp_unknow_error">Could not complete purchase. Please try again.</string>
+    <string name="inapp_verify_error">Could not complete purchase. Please try again.</string>
 </resources>
